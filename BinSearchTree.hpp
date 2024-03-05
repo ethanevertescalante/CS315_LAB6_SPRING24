@@ -18,6 +18,7 @@ public:
     void inorderDump();
     int maxDepth();
     void iterInsert( int v );
+    void destructorHelper(TreeNode *);
 
     ~BinSearchTree();
 
@@ -25,6 +26,9 @@ private:
     TreeNode *insert( TreeNode *, int );
     int size(TreeNode *);
     bool find(TreeNode *, int v);
+    void inorderDump(TreeNode *);
+    int maxDepth(TreeNode *);
+
     TreeNode *root;
 };
 

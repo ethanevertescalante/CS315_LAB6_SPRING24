@@ -30,7 +30,7 @@ int main( int argc, char *argv[] ) {
     BinSearchTree *tree = new BinSearchTree();
     int aValue;
     while( inputStream >> aValue )
-        tree->insert( aValue );
+        tree->iterInsert( aValue );
 
     // size has not been implemented. It currently returns zero
     // just so that the program compiles. You should write
@@ -40,7 +40,26 @@ int main( int argc, char *argv[] ) {
     std::cout << tree->size() << std::endl;
 
     std::cout << "Finding 41: ";
-    std::cout << tree->find(41) << std::endl;
+    std::cout << tree->iterFind(41) << std::endl;
+
+    std::cout << "Size of Tree: ";
+    std::cout << tree->size() << std::endl;
+
+
+    std::cout << "Finding 41: ";
+    std::cout << tree->iterFind(41) << std::endl;
+
+    std::cout << "InOrderDump(root): " << std::endl;
+    tree->inorderDump();
+
+    std::cout << "MaxDepth: " << tree->maxDepth() << std::endl;
+
+    std::cout << "Inserting 10... " << std::endl;
+    tree->iterInsert(110);
+
+    std::cout << "InOrderDump(root): " << std::endl;
+    tree->inorderDump();
+
 
     return 0;
 }
