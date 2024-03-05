@@ -25,15 +25,40 @@ void BinSearchTree::insert(int v) {
 
 int BinSearchTree::size() {
     // Write this function first!
-    return 0;
+    return size(root);
+
+}
+
+int BinSearchTree::size(TreeNode * root) {
+    //helper function
+    if(root == nullptr)
+        return 0;
+
+    return 1 + size(root->leftSubtree()) + size(root->rightSubtree());
 }
 
 bool BinSearchTree::find(int v) {
     // You need to write a recursive implementation for this function.
     // Right now, it returns false so that insert can do its job.
     // That means, it will add duplicates to the tree, which is not desirable.
-    return false;
+    find(root, v);
+
 }
+
+bool BinSearchTree::find(TreeNode *, int v) {
+    //helper function
+    if(root == nullptr){
+        return false;
+    }
+
+    if(root->value() == v){
+        return true;
+    }
+
+   // return find(root->leftSubtree(), v) && find(root->rightSubtree(), v);
+
+}
+
 
 BinSearchTree::~BinSearchTree() {
     // This function should delete every node in the tree.

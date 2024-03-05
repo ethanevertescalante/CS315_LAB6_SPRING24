@@ -36,7 +36,11 @@ int main( int argc, char *argv[] ) {
     // just so that the program compiles. You should write
     // an implementation for size first. Then, write an implementation for
     // find.
+    std::cout << "Size of Tree: ";
     std::cout << tree->size() << std::endl;
+
+    std::cout << "Finding 41: ";
+    std::cout << tree->find(41) << std::endl;
 
     return 0;
 }

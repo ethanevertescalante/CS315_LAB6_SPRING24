@@ -23,6 +23,8 @@ public:
 
 private:
     TreeNode *insert( TreeNode *, int );
+    int size(TreeNode *);
+    bool find(TreeNode *, int v);
     TreeNode *root;
 };
 
