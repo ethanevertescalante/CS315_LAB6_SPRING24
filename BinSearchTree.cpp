@@ -111,33 +111,39 @@ int BinSearchTree::maxDepth(TreeNode * root) {
 }
 
 void BinSearchTree::iterInsert(int v) {
-    TreeNode* temp = root;
-    //search in the tree
-    //if it is a nullptr,
-    if(!find(temp, v)) {
 
-        TreeNode *newNode = new TreeNode(v);
-
-        while (temp->leftSubtree() != nullptr || temp->rightSubtree() != nullptr) {
-            if (v > temp->value()) {
-                temp = temp->rightSubtree();
-            } else if (v < temp->value()) {
-                temp = temp->leftSubtree();
-            }
-        }
-
-        if (v > temp->value()) {
-            temp->rightSubtree(newNode);
-        } else if (v < temp->value()) {
-            temp->leftSubtree(newNode);
-        }
-
-
+    TreeNode *newNode = new TreeNode(v);
+    if (root == nullptr){
+        root = newNode;
+        return;
     }
+
+    TreeNode *temp = root;
+
+if(!find(temp, v)){
+    while (temp != nullptr){
+
+        //I pretty much just combined the two if statements we had and put then into the while loop
+
+        if (v > temp->value()){
+            if (temp->rightSubtree() == nullptr){
+                temp->rightSubtree(newNode);
+                return;
+            }
+            temp = temp->rightSubtree();
+        } else if (v < temp->value()){
+            if (temp->leftSubtree() == nullptr){
+                temp->leftSubtree(newNode);
+                return;
+            }
+            temp = temp->leftSubtree();
+        }
+    }
+
+}
 }
 
-
-BinSearchTree::~BinSearchTree() {
+BinSearchTree::~BinSearchTree(){
     // This function should delete every node in the tree.
     // To do that, you will have to recursively traverse the tree, using
     // a post-order traversal.
@@ -152,7 +158,9 @@ BinSearchTree::~BinSearchTree() {
 
 }
 
-void BinSearchTree::destructorHelper(TreeNode * root) {
+void BinSearchTree::destructorHelper(TreeNode * root){
+  
+
     if(root == nullptr) {
         return;
     }

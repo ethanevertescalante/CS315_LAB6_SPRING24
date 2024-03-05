@@ -54,7 +54,7 @@ int main( int argc, char *argv[] ) {
 
     std::cout << "MaxDepth: " << tree->maxDepth() << std::endl;
 
-    std::cout << "Inserting 10... " << std::endl;
+    std::cout << "Inserting 110... " << std::endl;
     tree->iterInsert(110);
 
     std::cout << "InOrderDump(root): " << std::endl;
