@@ -2,6 +2,9 @@
 // Created by Ali Kooshesh on 3/1/23.
 //
 
+//Ethan Escalante
+//James Togher
+
 #include "BinSearchTree.hpp"
 #include <iostream>
 #include <algorithm>

@@ -30,7 +30,7 @@ int main( int argc, char *argv[] ) {
     BinSearchTree *tree = new BinSearchTree();
     int aValue;
     while( inputStream >> aValue )
-        tree->iterInsert( aValue );
+        tree->insert( aValue );
 
     // size has not been implemented. It currently returns zero
     // just so that the program compiles. You should write
